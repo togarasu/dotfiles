@@ -1,0 +1,35 @@
+# w3mimgdisplay
+# move
+keymap j MOVE_DOWN1
+keymap k MOVE_UP1
+keymap h MOVE_LEFT1
+keymap l MOVE_RIGHT1
+keymap C-e UP
+keymap C-y DOWN
+keymap C-f NEXT_PAGE
+keymap C-b PREV_PAGE
+keymap /   ISEARCH
+keymap ?   ISEARCH_BACK
+
+# buffer
+keymap d CLOSE_TAB
+keymap K PREV
+keymap J NEXT
+keymap s SELECT
+
+# mark
+keymap m   MARK
+keymap C-n NEXT_MARK
+keymap C-p PREV_MARK
+
+# tab
+keymap [ PREV_TAB
+keymap ] NEXT_TAB
+keymap o COMMAND  "GOTO file:///cgi-bin/toppage.cgi"
+keymap O COMMAND  "TAB_GOTO file:///cgi-bin/toppage.cgi"
+
+# preference
+keymap p OPTIONS
+
+# off
+keymap Q NOTHING
