@@ -1,6 +1,7 @@
 import yaml
+config.load_autoconfig()
 c.messages.timeout = 10000
-c.tabs.last_close = "blank"
+c.tabs.last_close = "close"
 
 c.tabs.show = "always"
 c.tabs.show_switching_delay = 3000
@@ -21,6 +22,12 @@ c.url.searchengines = {
         "gt":"https://translate.google.co.jp/?sl=en&tl=ja&text={}&op=translate",
         "t":"https://www.deepl.com/ja/translator#en/ja/{}",
         }
+
+c.bindings.commands = {
+    "normal": {"et": "edit-text"},
+    "normal": {"ec": "config-edit"},
+    "normal": {"O": "fake-key --global ':open -w '"},
+    }
 
 c.editor.command = ["x-terminal-emulator", "--command='nvim {file}'"]
 
