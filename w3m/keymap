@@ -27,6 +27,7 @@ keymap [ PREV_TAB
 keymap ] NEXT_TAB
 keymap o COMMAND  "GOTO file:///cgi-bin/toppage.cgi"
 keymap O COMMAND  "TAB_GOTO file:///cgi-bin/toppage.cgi"
+keymap ESC-e COMMAND  "GOTO file:///cgi-bin/searchword.cgi"
 
 # preference
 keymap p OPTIONS
