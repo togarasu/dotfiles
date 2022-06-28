@@ -31,5 +31,10 @@ keymap O COMMAND  "TAB_GOTO file:///cgi-bin/toppage.cgi"
 # preference
 keymap p OPTIONS
 
+#shell
+keymap ":"-! SHELL
+keymap ":"-t SHELL zsh
+
 # off
 keymap Q NOTHING
+keymap ":"-q ABORT
