@@ -1,0 +1,48 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+    let g:lightline = { "colorscheme": "seoul256",}
+'''
+
+[[plugins]]
+repo = 'Townk/Vim-autoclose'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'qnighy/satysfi.vim'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    set updatetime=500
+    let g:gitgutter_override_sign_column_highlight = 0
+    highlight SignColumn            ctermbg=black
+    highlight GitGutterAdd          ctermfg=green ctermbg=black
+    highlight GitGutterChange       ctermfg=yellow ctermbg=black
+    highlight GitGutterDelete       ctermfg=red ctermbg=black
+    highlight GitGutterChangeDelete ctermfg=gray ctermbg=black
+'''
+
+[[plugins]]
+repo = 'PProvost/vim-ps1'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+
+[[plugins]]
+repo = 'hylang/vim-hy'
+
+
+[[plugins]]
+repo = 'mbbill/undotree'
+
+
+[[plugins]]
+repo = 'dleonard0/pony-vim-syntax'
+

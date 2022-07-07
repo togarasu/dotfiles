@@ -1,0 +1,15 @@
+# ---------- looks ----------
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+let g:quickrun_config = {}
+autocmd BufNewFile,BufRead *.py let g:quickrun_config.python = {'command': 'python3.10'}
+autocmd BufNewFile,BufRead *.hy let g:quickrun_config.hylang = {'command': 'hy'}
+'''
+
+[[plugins]]
+repo = 'yuratomo/w3m.vim'

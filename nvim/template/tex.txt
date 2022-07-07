@@ -1,0 +1,7 @@
+\documentclass{ltjsarticle}
+\usepackage{luatexja}
+% \usepackage{graphics}
+
+\begin{document}
+
+\end{document}

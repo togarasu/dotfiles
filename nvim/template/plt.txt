@@ -1,0 +1,23 @@
+#!/usr/bin/gnuplot
+
+set datafile commentschars "@#"
+set title  font "Arial,18" 
+set xlabel font "Arial,24"
+set ylabel font "Arial,24"
+set tics   font "Arial,18"
+set key    font "Arial,18"
+set lmargin 12
+set xlabel offset 0, -1
+set rmargin 5
+set bmargin 5
+set ylabel offset -2.5, 0
+set key left top
+
+set xrange [*:*]
+set yrange [*:*]
+
+set xlabel ""
+set ylabel ""
+
+
+pause -1
