@@ -11,7 +11,6 @@ export PATH="${HOME}/Workspace/nvim-linux64/bin:$PATH"
 export PATH="${HOME}/.local/kitty.app/bin:$PATH"
 export MANPAGER=w3m
 export WWW_HOME='file:///cgi-bin/toppage.cgi'
-source $HOME/.cargo/env
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh="kitty +kitten ssh"
 # [[ $SSH_CLIENT ]] && export $(echo $SSH_CLIENT| cut -d ' ' -f 1):0
 #key bind
@@ -95,7 +94,8 @@ setopt prompt_percent
 setopt transient_rprompt 
 # prompt
 #  /sys/class/power_supply/BAT0/status : Charging ? Dischargingで色を変えたい
-PROMPT='%K{red}%F{black}$(cat /sys/class/power_supply/BAT0/capacity)%% %k%K{green}%F{black}%/%f%k%K{cyan}%F{black}%D %T%f%k ${vcs_info_msg_0_}
+# PROMPT='%K{red}%F{black}$(cat /sys/class/power_supply/BAT0/capacity)%% %k%K{green}%F{black}%/%f%k%K{cyan}%F{black}%D %T%f%k ${vcs_info_msg_0_}
+PROMPT='%K{green}%F{black}%/%f%k%K{cyan}%F{black}%D %T%f%k ${vcs_info_msg_0_}
 [%j]%#'
 
 ## alias ##
@@ -104,34 +104,25 @@ alias fev='feh -. -g 1100x700'
 alias tw='nekome tweet -e nvim'
 
  
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-zinit load zsh-users/zsh-syntax-highlighting
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
-
-### End of Zinit's installer chunk
-
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-ZSH_HIGHLIGHT_STYLES[path]='fg=magenta'
-
 # opam configuration
 [[ ! -r /home/atled/.opam/opam-init/init.zsh ]] || source /home/atled/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 [ -f "/home/atled/.ghcup/env" ] && source "/home/atled/.ghcup/env" # ghcup-env
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit load zsh-users/zsh-syntax-highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_STYLES[path]='fg=magenta'
+
