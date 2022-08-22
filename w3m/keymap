@@ -10,7 +10,7 @@ keymap C-f NEXT_PAGE
 keymap C-b PREV_PAGE
 keymap /   ISEARCH
 keymap ?   ISEARCH_BACK
-keymap t   SUBMIT
+keymap C-RET   SUBMIT
 
 # buffer
 keymap d CLOSE_TAB
@@ -18,15 +18,22 @@ keymap K PREV
 keymap J NEXT
 keymap s SELECT
 
+#link
+keymap ":"-":" MARK_URL
+
 # mark
 keymap m   MARK
 keymap C-n NEXT_MARK
 keymap C-p PREV_MARK
+keymap t   GOTO file:///cgi-bin/quickmark.cgi
+# keymap t   SHELL 'echo "$W3M_URL" >> ~/.w3m/quickmark' # 日本語の表示があらぬことになるんだけどどうすれば？
+keymap ESC-t GOTO file:///home/atled/.w3m/quickmark # どうあっても平文ではリンクとして扱えない
 
 # tab
 keymap [ PREV_TAB
 keymap ] NEXT_TAB
-keymap o COMMAND  "GOTO file:///cgi-bin/toppage.cgi"
+# keymap o COMMAND  "GOTO file:///cgi-bin/toppage.cgi"
+keymap o COMMAND  "DICT_WORD"
 keymap O COMMAND  "TAB_GOTO file:///cgi-bin/toppage.cgi"
 keymap ESC-e COMMAND  "GOTO file:///cgi-bin/searchword.cgi"
 # keymap ESC-t "PIPE_BUF sed -e 's/\ /+/g'|xargs -I{} echo url?text={}&source=en&target=ja"
@@ -34,7 +41,7 @@ keymap ESC-e COMMAND  "GOTO file:///cgi-bin/searchword.cgi"
 # keymap ESC-t PIPE_BUF "sed -z 's/\n/+/g'|sed -e 's/\ /+/g'|sed -e 's/+\+/+/g'|sed -e 's/+$//'|xargs -I{} curl -G -L -s 'https://script.google.com/macros/s/AKfycbxrz3bxQ4qYVSiQ0pJheTJY48RMPYfAXjqkx6DzCX_cDKHA652eM31XvIzrfjTELY689Q/exec?text={}&source=en&target=ja'"
 
 # outer command
-keymap I EXEC_SHELL "export DISPLAY=$(echo $SSH_CLIENT| cut -d ' ' -f 1):0&& feh -g 1000x700 -. $W3M_CURRENT_IMG &"
+# keymap i EXEC_SHELL "export DISPLAY=$(echo $SSH_CLIENT| cut -d ' ' -f 1):0&& feh -. $W3M_CURRENT_IMG &"
 
 # preference
 keymap p OPTIONS

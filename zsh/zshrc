@@ -2,7 +2,7 @@
 
 #locale
 #export LANG=ja_JP.UTF-8
-export GLFW_IM_MODULE=ibus
+export GLFW_IM_MODULE=fcitx5
 export PATH="/opt/julia-1.7.3/bin/:$PATH"
 export PATH="${HOME}/.local/bin/:$PATH"
 export PATH="${HOME}/.roswell/bin/:$PATH"
@@ -94,12 +94,14 @@ setopt prompt_percent
 ## コマンド実行後は右プロンプトを消す
 setopt transient_rprompt 
 # prompt
+#  /sys/class/power_supply/BAT0/status : Charging ? Dischargingで色を変えたい
 PROMPT='%K{red}%F{black}$(cat /sys/class/power_supply/BAT0/capacity)%% %k%K{green}%F{black}%/%f%k%K{cyan}%F{black}%D %T%f%k ${vcs_info_msg_0_}
 [%j]%#'
 
 ## alias ##
 alias ls='ls -h --color=auto'
 alias fev='feh -. -g 1100x700'
+alias tw='nekome tweet -e nvim'
 
  
 ### Added by Zinit's installer
@@ -129,8 +131,7 @@ zinit light-mode for \
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_STYLES[path]='fg=magenta'
 
-source $HOME/.cargo/env
-
 # opam configuration
 [[ ! -r /home/atled/.opam/opam-init/init.zsh ]] || source /home/atled/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
 [ -f "/home/atled/.ghcup/env" ] && source "/home/atled/.ghcup/env" # ghcup-env
