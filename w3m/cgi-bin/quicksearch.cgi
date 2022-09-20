@@ -3,7 +3,8 @@ import os
 
 engine = {
         "default": (lambda q: f"http://google.com/search?btnG=Google&q={q}"),
-        "e": (lambda q: f"https://ejje.weblio.jp/content/{q}")
+        "e": (lambda q: f"https://ejje.weblio.jp/content/{q}"),
+        "hex": (lambda q: f"https://hex.pm/packages?search={q}&sort=recent_downloads")
         }
 
 def main():
