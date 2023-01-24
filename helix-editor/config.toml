@@ -1,0 +1,21 @@
+theme = "autumn_night"
+
+[editor]
+line-number = "relative"
+mouse = false
+cursorline = true
+true-color = true
+rulers = [80, 160]
+color-modes = true
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
+
+[editor.whitespace]
+render = "all"
+
+[editor.indent-guides]
+render = true
+character = "|"
