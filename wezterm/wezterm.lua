@@ -1,7 +1,19 @@
 local wezterm = require 'wezterm'
 
+-- マシン毎の振舞いを設定する
+-- できればOS毎にしたいのだが...
+local hostname = wezterm.hostname()
+if hostname == 'tytppc18' then
+  default_prog = {"pwsh"}
+elseif hostname == 'atled-desktop' then
+  default_prog = {"bash"}
+else
+  default_prog = {"zsh"}
+end
+
+
 return {
-  default_prog = {"pwsh"},
+  default_prog = default_prog,
   font_size = 11,
   color_scheme = "Pop (base16)",
   -- color_scheme = "Numix Darkest (terminal.sexy)",
