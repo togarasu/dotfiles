@@ -6,7 +6,7 @@ local hostname = wezterm.hostname()
 if hostname == 'tytppc18' then
   default_prog = {"pwsh"}
 elseif hostname == 'atled-desktop' then
-  default_prog = {"bash"}
+  default_prog = {"zsh"}
 else
   default_prog = {"zsh"}
 end
