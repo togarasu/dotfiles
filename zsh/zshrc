@@ -12,7 +12,7 @@ export PATH="${HOME}/Workspace/nvim-linux64/bin:$PATH"
 export PATH="${HOME}/.local/kitty.app/bin:$PATH"
 export MANPAGER=w3m
 export WWW_HOME='file:///cgi-bin/toppage.cgi'
-export EDITOR=nvim
+export EDITOR=hx
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh="kitty +kitten ssh"
 # [[ $SSH_CLIENT ]] && export $(echo $SSH_CLIENT| cut -d ' ' -f 1):0
 #key bind
@@ -106,9 +106,9 @@ alias fev='feh -. -g 1100x700'
 
  
 # opam configuration
-[[ ! -r /home/atled/.opam/opam-init/init.zsh ]] || source /home/atled/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r /home/$USER/.opam/opam-init/init.zsh ]] || source /home/$USER/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-[ -f "/home/atled/.ghcup/env" ] && source "/home/atled/.ghcup/env" # ghcup-env
+[ -f "/home/$USER/.ghcup/env" ] && source "/home/$USER/.ghcup/env" # ghcup-env
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then

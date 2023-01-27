@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import os
 
 def main():
   print("Content-type: text/plain")
@@ -6,7 +7,7 @@ def main():
   print("")
 
 commands = [
-  'GOTO "file:///home/atled/.w3m/src/toppage.html"',
+  f'GOTO "file:///home/{os.environ["USER"]}/.w3m/src/toppage.html"',
   "DELETE_PREVBUF",
   "NEXT_LINK"
 ]
