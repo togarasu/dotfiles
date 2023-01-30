@@ -3,7 +3,6 @@ import XMonad.Layout
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.EZConfig
-import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 
 import Data.Monoid ((<>))
