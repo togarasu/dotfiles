@@ -43,6 +43,16 @@ return {
     key = 'j',
     mods = 'CTRL|SHIFT',
     action = wezterm.action.ActivateTabRelative(1),
+    },
+    {
+      key = 'p',
+      mods = 'CTRL|SHIFT',
+      action = wezterm.action.ShowLauncherArgs {flags = 'FUZZY|COMMANDS'}
+    },
+    {
+      key = '[',
+      mods = 'CTRL',
+      action = wezterm.action.SendKey {key = 'Escape'},
     }
   },
 }
