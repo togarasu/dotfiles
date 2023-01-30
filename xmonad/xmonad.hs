@@ -48,13 +48,10 @@ myConfig = def {
         ,   modMask = myModKey
         ,   layoutHook = myLayout
         } 
-        -- `additionalKeys`
-        -- [ 
-        --     ((myModKey, xK_n), spawn "notable")
-        -- ]
-        `additionalKeysP`
-        [
-            ("M-<F1>",spawn "qutebrowser")
+        `additionalKeys`
+        [ 
+            -- ((myModKey, xK_n), spawn "notable")
+            ((myModKey, xK_F1), spawn "qutebrowser")
         ]
 
 bgColor   = "#363434"
