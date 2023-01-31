@@ -9,7 +9,7 @@ import XMonad.Actions.UpdatePointer
 import Data.Monoid ((<>))
 -- import XMonad.Layout.BinarySpacePartition
 
-wallPaperPath = "$HOME/Pictures/Wallpapers/9171828682516415407.jpg"
+wallPaperPath = "$HOME/Pictures/Wallpapers/1b1f1a96d4a27816f64bfa2aace59626.jpeg"
 
 main :: IO()
 main = do
