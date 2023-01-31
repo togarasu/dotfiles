@@ -24,9 +24,8 @@ c.url.searchengines = {
         }
 
 c.bindings.commands = {
-    "normal": {"et": "edit-text"},
-    "normal": {"ec": "config-edit"},
-    "normal": {"O": "fake-key --global ':open -w '"},
+    "normal": {"o": "fake-key --global ':open -t '",
+               "O": "fake-key --global ':open -w '"},
     }
 
 c.editor.command = ["x-terminal-emulator", "--command='nvim {file}'"]
