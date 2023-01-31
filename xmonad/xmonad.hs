@@ -4,6 +4,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.EZConfig
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Actions.UpdatePointer
 
 import Data.Monoid ((<>))
 -- import XMonad.Layout.BinarySpacePartition
@@ -33,6 +34,8 @@ myLayout = tiled ||| Full
     ratio = 4/7
     delta = 3/100
 
+myLogHook = updatePointer (0.05, 0.05) (0.05, 0.05)
+
 myManageHookFloat = composeAll
   [
     className =? "Minecraft" --> doFloat
@@ -41,6 +44,7 @@ myManageHookFloat = composeAll
 myConfig = def {
             manageHook = manageHook def <+> myManageHookFloat 
         ,   startupHook = myStartupHook
+        ,   logHook = myLogHook
         ,   terminal = myTerminal
         ,   focusedBorderColor = cBlue
         ,   normalBorderColor = cGrey
