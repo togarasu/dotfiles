@@ -16,6 +16,9 @@ select = "block"
 [editor.whitespace]
 render = "all"
 
+[editor.whitespace.characters]
+space = " "
+
 [editor.indent-guides]
 render = true
 character = "|"
