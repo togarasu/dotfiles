@@ -5,6 +5,8 @@ local wezterm = require 'wezterm'
 local hostname = wezterm.hostname()
 if hostname == 'tytppc18' then
   default_prog = {"pwsh"}
+if hostname == 'DESKTOP-KOU6VUU' then
+  default_prog = {"pwsh"}
 elseif hostname == 'atled-desktop' then
   default_prog = {"zsh"}
 else
