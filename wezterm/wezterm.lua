@@ -1,21 +1,8 @@
 local wezterm = require 'wezterm'
+local utils = require 'utils'
+local localsetting = require 'localsetting'
 
--- マシン毎の振舞いを設定する
--- できればOS毎にしたいのだが...
-local hostname = wezterm.hostname()
-if hostname == 'tytppc18' then
-  default_prog = {"pwsh"}
-elseif hostname == 'DESKTOP-KOU6VUU' then
-  default_prog = {"pwsh"}
-elseif hostname == 'atled-desktop' then
-  default_prog = {"zsh"}
-else
-  default_prog = {"zsh"}
-end
-
-
-return {
-  default_prog = default_prog,
+local setting = {
   font_size = 11,
   color_scheme = "Pop (base16)",
   -- color_scheme = "Numix Darkest (terminal.sexy)",
@@ -58,3 +45,5 @@ return {
     }
   },
 }
+
+return utils.merge(setting, localsetting)

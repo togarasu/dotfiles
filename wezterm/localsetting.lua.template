@@ -1,0 +1,5 @@
+local localsetting = {}
+
+-- localsetting.default_prog = {"zsh"}
+
+return localsetting
