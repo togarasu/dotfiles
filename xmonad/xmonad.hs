@@ -5,6 +5,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Util.EZConfig
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Actions.UpdatePointer
+import XMonad.Actions.GridSelect
 
 import Data.Monoid ((<>))
 -- import XMonad.Layout.BinarySpacePartition
@@ -56,6 +57,7 @@ myConfig = def {
         [ 
             -- ((myModKey, xK_n), spawn "notable")
             ((myModKey, xK_F1), spawn "qutebrowser")
+        ,   ((myModKey, xK_f), goToSelected def)
         ]
 
 bgColor   = "#363434"
