@@ -5,6 +5,8 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Util.EZConfig
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Actions.UpdatePointer
+import XMonad.Actions.GridSelect
+-- import XMonad.Layout.IfMax
 
 import Data.Monoid ((<>))
 -- import XMonad.Layout.BinarySpacePartition
@@ -27,7 +29,10 @@ myStartupHook = do
   spawn $ "feh --bg-scale " <> wallPaperPath
   -- 背景の透過
   spawn "xcompmgr"
-myLayout = tiled ||| Full 
+
+-- IfMaxでウィンドウ数に応じて利用するレイアウトを制御できる
+-- myLayout = tiled ||| Full ||| IfMax 3 Full tiled
+myLayout = tiled ||| Full
   where
     tiled = Tall nmaster delta ratio
     nmaster = 1
@@ -47,15 +52,15 @@ myConfig = def {
         ,   logHook = myLogHook
         ,   terminal = myTerminal
         ,   focusedBorderColor = cBlue
-        ,   normalBorderColor = cGrey
+        ,   normalBorderColor = cBlack
         ,   borderWidth = myBorderWidth
         ,   modMask = myModKey
         ,   layoutHook = myLayout
         } 
         `additionalKeys`
         [ 
-            -- ((myModKey, xK_n), spawn "notable")
             ((myModKey, xK_F1), spawn "qutebrowser")
+        ,   ((myModKey, xK_f), goToSelected def)
         ]
 
 bgColor   = "#363434"
@@ -67,3 +72,4 @@ cPink     = "#f542bf"
 cOrange   = "#f58a42"
 cGrey     = "#c2c2c2"
 cDarkGrey = "#787576"
+cBlack    = "#000000"
