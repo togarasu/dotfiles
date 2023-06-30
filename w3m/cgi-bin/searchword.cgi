@@ -11,6 +11,7 @@ word = os.environ.get("W3M_CURRENT_WORD", "NOT FOUND")
 
 commands = [
   f'GOTO "https://ejje.weblio.jp/content/{word}"',
+  f"GOTO_LINE 29",
   "DELETE_PREVBUF",
   "NEXT_LINK"
 ]
