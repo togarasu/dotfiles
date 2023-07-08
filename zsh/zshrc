@@ -11,7 +11,9 @@ export PATH="$PATH:${HOME}/.local/share/ponyup/bin/"
 export MANPAGER=w3m
 export WWW_HOME='file:///cgi-bin/toppage.cgi'
 export EDITOR=hx
-eval "$(~/.rbenv/bin/rbenv init - zsh)"
+if [ -f ~/.rbenv/bin/rbenv ]; then
+    eval "$(~/.rbenv/bin/rbenv init - zsh)"
+fi
 #key bind
 bindkey -v
 
