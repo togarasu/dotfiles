@@ -19,7 +19,7 @@ if [ -f ~/.dotnet/dotnet ]; then
     export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 fi
 #key bind
-bindkey -v
+bindkey -e
 
 # ビープ音を鳴らさないようにする
 setopt no_beep           
