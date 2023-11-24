@@ -14,9 +14,12 @@ export EDITOR=hx
 if [ -f ~/.rbenv/bin/rbenv ]; then
     eval "$(~/.rbenv/bin/rbenv init - zsh)"
 fi
-if [ -f ~/.dotnet/dotnet ]; then
+if [ -d ~/.dotnet ]; then
     export DOTNET_ROOT=$HOME/.dotnet
     export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
+fi
+if [ -d $HOME/.rye/ ]; then
+    source "$HOME/.rye/env"
 fi
 #key bind
 bindkey -e
