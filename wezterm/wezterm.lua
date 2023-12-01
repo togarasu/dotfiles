@@ -4,8 +4,9 @@ local localsetting = require 'localsetting'
 
 local setting = {
   font_size = 11,
-  color_scheme = "Pop (base16)",
+  -- color_scheme = "Pop (base16)",
   -- color_scheme = "Numix Darkest (terminal.sexy)",
+  color_scheme = "Windows 95 (base16)",
   window_background_opacity = .90,
   hide_tab_bar_if_only_one_tab = true,
   use_ime = true,
