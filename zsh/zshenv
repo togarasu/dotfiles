@@ -1,7 +1,7 @@
 # export XKB_DEFAULT_OPTIONS="grp:caps_switch"
 export LANG=ja_JP.UTF-8
 
-export SSH_CLIENT_ADDRESS=$(echo $SSH_CLIENT| cut -d ' ' -f 1)
+SSH_CLIENT_ADDRESS=$(echo $SSH_CLIENT| cut -d ' ' -f 1)
 if [ -z $DISPLAY ]; then
   export DISPLAY=$SSH_CLIENT_ADDRESS:0
 fi
