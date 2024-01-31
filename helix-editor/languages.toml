@@ -7,6 +7,10 @@ roots = ["corral.json", "lock.json"]
 indent = { tab-width = 2, unit = "  " }
 comment-token = "//"
 
+[[language]]
+name = "fsharp"
+indent = {tab-width = 2, unit = "  "}
+
 [[grammar]]
 name = "ponylang"
 source = { git = "https://github.com/mfelsche/tree-sitter-ponylang", rev = "ef66b151bc2604f431b5668fcec4747db4290e11" }
