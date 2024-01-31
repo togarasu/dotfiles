@@ -52,7 +52,7 @@ keymap p OPTIONS
 
 #shell
 keymap ":"-! SHELL
-keymap ":"-t SHELL zsh
+keymap ":"-t SHELL $SHELL
 
 # off
 keymap Q NOTHING
