@@ -8,9 +8,22 @@ indent = { tab-width = 2, unit = "  " }
 comment-token = "//"
 
 [[language]]
+name = "satysfi"
+scope = "surce.saty"
+file-types = ["saty"]
+injection-regex = "saty"
+roots = [""]
+indent = { tab-width = 2, unit = "  " }
+comment-token = "%"
+
+[[language]]
 name = "fsharp"
 indent = {tab-width = 2, unit = "  "}
 
 [[grammar]]
 name = "ponylang"
 source = { git = "https://github.com/mfelsche/tree-sitter-ponylang", rev = "ef66b151bc2604f431b5668fcec4747db4290e11" }
+
+[[grammar]]
+name = "satysfi"
+source = { git = "https://github.com/monaqa/tree-sitter-satysfi", rev = "5519c547418ecb31ac7d63e64653aed726b5d1c3"}
