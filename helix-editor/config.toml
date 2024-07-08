@@ -4,7 +4,8 @@
 # theme = "dracula"
 # theme = "hex_steel"
 # theme = "hex_toxic" # 選択箇所がまるで見えないのでよくない
-theme = "monokai"
+# theme = "monokai"
+theme = "kanagawa"
 # theme = "zenburn"
 
 [editor]
@@ -12,7 +13,6 @@ line-number = "relative"
 mouse = false
 cursorline = true
 true-color = true
-rulers = [80, 160]
 color-modes = true
 bufferline = "multiple"
 
