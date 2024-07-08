@@ -11,11 +11,17 @@ keymap C-b PREV_PAGE
 keymap /   ISEARCH
 keymap ?   ISEARCH_BACK
 keymap C-RET   SUBMIT
+keymap g-g BEGIN
+keymap g-e END
+keymap g-h LINE_BEGIN
+keymap g-l LINE_END
+keymap g-n NEXT
+keymap g-p PREV
 
 # buffer
 keymap d CLOSE_TAB
-keymap K PREV
-keymap J NEXT
+# keymap K PREV
+# keymap J NEXT
 keymap s SELECT
 keymap R COMMAND  "GOTO file:///cgi-bin/duplicate.cgi"
 keymap r RELOAD
@@ -28,8 +34,6 @@ keymap m   MARK
 keymap C-n NEXT_MARK
 keymap C-p PREV_MARK
 keymap t   GOTO file:///cgi-bin/quickmark.cgi
-# keymap t   SHELL 'echo "$W3M_URL" >> ~/.w3m/quickmark' # 日本語の表示があらぬことになるんだけどどうすれば？
-keymap ESC-t GOTO file:///home/atled/.w3m/quickmark # どうあっても平文ではリンクとして扱えない
 
 # tab
 keymap [ PREV_TAB
