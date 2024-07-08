@@ -21,6 +21,10 @@ fi
 if [ -d $HOME/.rye/ ]; then
     source "$HOME/.rye/env"
 fi
+if [ -d $HOME/.bun/bin ]; then
+    export PATH="$PATH:${HOME}/.bun/bin"
+    export PATH="${HOME}/Workspace/node-v20.11.0-linux-x64/bin:$PATH"
+fi
 #key bind
 bindkey -e
 
@@ -133,3 +137,9 @@ zinit load zsh-users/zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_STYLES[path]='fg=magenta'
 
+# bun completions
+[ -s "/home/atled/.bun/_bun" ] && source "/home/atled/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
