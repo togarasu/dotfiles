@@ -41,15 +41,11 @@ keymap ] NEXT_TAB
 keymap o COMMAND  "DICT_WORD"
 keymap O COMMAND  "TAB_GOTO file:///cgi-bin/toppage.cgi"
 keymap ESC-e COMMAND  "GOTO file:///cgi-bin/searchword.cgi"
-# keymap ESC-t "PIPE_BUF sed -e 's/\ /+/g'|xargs -I{} echo url?text={}&source=en&target=ja"
-# あまりにも長いとそもそもあっちが耐えられない
-# keymap ESC-t PIPE_BUF "sed -z 's/\n/+/g'|sed -e 's/\ /+/g'|sed -e 's/+\+/+/g'|sed -e 's/+$//'|xargs -I{} curl -G -L -s 'https://script.google.com/macros/s/AKfycbxrz3bxQ4qYVSiQ0pJheTJY48RMPYfAXjqkx6DzCX_cDKHA652eM31XvIzrfjTELY689Q/exec?text={}&source=en&target=ja'"
 
 # edit screen
 keymap ":"-e EDIT_SCREEN
 
 # outer command
-# keymap i EXEC_SHELL "export DISPLAY=$(echo $SSH_CLIENT| cut -d ' ' -f 1):0&& feh -. $W3M_CURRENT_IMG &"
 
 # preference
 keymap p OPTIONS
