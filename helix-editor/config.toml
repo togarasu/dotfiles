@@ -1,12 +1,5 @@
 # コメントが明るい色かつ通常の文章とコメントの色が異なるテーマをselectしたい
-# theme = "base16_default"
-# theme = "dark_plus"
-# theme = "dracula"
-# theme = "hex_steel"
-# theme = "hex_toxic" # 選択箇所がまるで見えないのでよくない
-# theme = "monokai"
-theme = "kanagawa"
-# theme = "zenburn"
+theme = "doom_acario_dark"
 
 [editor]
 line-number = "relative"
