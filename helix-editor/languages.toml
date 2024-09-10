@@ -6,6 +6,9 @@ injection-regex = "pony"
 roots = ["corral.json", "lock.json"]
 indent = { tab-width = 2, unit = "  " }
 comment-token = "//"
+[[grammar]]
+name = "ponylang"
+source = { git = "https://github.com/mfelsche/tree-sitter-ponylang", rev = "ef66b151bc2604f431b5668fcec4747db4290e11" }
 
 [[language]]
 name = "satysfi"
@@ -15,15 +18,23 @@ injection-regex = "saty"
 roots = [""]
 indent = { tab-width = 2, unit = "  " }
 comment-token = "%"
+[[grammar]]
+name = "satysfi"
+source = { git = "https://github.com/monaqa/tree-sitter-satysfi", rev = "5519c547418ecb31ac7d63e64653aed726b5d1c3"}
 
 [[language]]
 name = "fsharp"
 indent = {tab-width = 2, unit = "  "}
 
+[[language]]
+name = "hy"
+scope = "source.hy"
+file-types = ["hy"]
+injection-regex = "hy"
+roots = [""]
+comment-token = ";"
 [[grammar]]
-name = "ponylang"
-source = { git = "https://github.com/mfelsche/tree-sitter-ponylang", rev = "ef66b151bc2604f431b5668fcec4747db4290e11" }
-
-[[grammar]]
-name = "satysfi"
-source = { git = "https://github.com/monaqa/tree-sitter-satysfi", rev = "5519c547418ecb31ac7d63e64653aed726b5d1c3"}
+name = "hy"
+[grammar.source]
+git = "https://github.com/kwshi/tree-sitter-hy"
+rev = "7e5ec916f97bd4a4aa99498ed3c70bdbcb02a071"
