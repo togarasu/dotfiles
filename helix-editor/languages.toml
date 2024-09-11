@@ -33,6 +33,9 @@ file-types = ["hy"]
 injection-regex = "hy"
 roots = [""]
 comment-token = ";"
+[language.formatter]
+command = "cljfmt"
+args = ["fix", "-"]
 [[grammar]]
 name = "hy"
 [grammar.source]
