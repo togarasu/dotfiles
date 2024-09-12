@@ -32,6 +32,7 @@ scope = "source.hy"
 file-types = ["hy"]
 injection-regex = "hy"
 roots = [""]
+auto-format = true
 comment-token = ";"
 [language.formatter]
 command = "cljfmt"
