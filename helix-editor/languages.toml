@@ -36,7 +36,7 @@ auto-format = true
 comment-token = ";"
 [language.formatter]
 command = "cljfmt"
-args = ["fix", "-"]
+args = ["fix", "--no-insert-missing-whitespace", "-"]
 [[grammar]]
 name = "hy"
 [grammar.source]
