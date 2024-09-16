@@ -1,5 +1,5 @@
 # コメントが明るい色かつ通常の文章とコメントの色が異なるテーマをselectしたい
-theme = "autumn_night"
+theme = "gruber-darker"
 
 [editor]
 line-number = "relative"
