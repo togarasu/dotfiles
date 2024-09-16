@@ -35,8 +35,8 @@ roots = [""]
 auto-format = true
 comment-token = ";"
 [language.formatter]
-command = "cljfmt"
-args = ["fix", "--no-insert-missing-whitespace", "-"]
+command = "cljstyle"
+args = ["pipe"]
 [[grammar]]
 name = "hy"
 [grammar.source]
