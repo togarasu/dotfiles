@@ -27,3 +27,6 @@ space = " "
 render = true
 # character = "▕"
 character = "⢸"
+
+[keys.normal]
+C-r = ":reload"
