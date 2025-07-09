@@ -11,7 +11,7 @@
    :remove-surrounding? true,
    :remove-trailing? true,
    :insert-missing? false},
-  :comments {:enabled? true, :inline-prefix " ", :leading-prefix "; "},
+  :comments {:enabled? true, :inline-prefix " ", :leading-prefix " "},
   :functions {:enabled? true},
   :eof-newline {:enabled? true, :trailing-blanks? false},
   :types
