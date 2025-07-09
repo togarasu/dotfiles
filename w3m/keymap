@@ -31,13 +31,13 @@ keymap ":"-":" MARK_URL
 
 # mark
 keymap m   MARK
-keymap C-n NEXT_MARK
-keymap C-p PREV_MARK
+keymap [-m PREV_MARK
+keymap ]-m NEXT_MARK
 keymap t   GOTO file:///cgi-bin/quickmark.cgi
 
 # tab
-keymap [ PREV_TAB
-keymap ] NEXT_TAB
+keymap [-t PREV_TAB
+keymap ]-t NEXT_TAB
 keymap o COMMAND  "DICT_WORD"
 keymap O COMMAND  "TAB_GOTO file:///cgi-bin/toppage.cgi"
 keymap ESC-e COMMAND  "GOTO file:///cgi-bin/searchword.cgi"
