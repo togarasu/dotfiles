@@ -6,3 +6,5 @@ if [ -z $DISPLAY ]; then
   export DISPLAY=$SSH_CLIENT_ADDRESS:0
 fi
 . "$HOME/.cargo/env"
+
+alias alias speedtest='speedtest -s 48463'
