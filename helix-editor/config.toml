@@ -1,5 +1,6 @@
 # コメントが明るい色かつ通常の文章とコメントの色が異なるテーマをselectしたい
-theme = "dracula_at_night"
+# theme = "dracula_at_night"
+theme = "modus_vivendi_tritanopia"
 
 [editor]
 line-number = "relative"
