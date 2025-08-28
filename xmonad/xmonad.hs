@@ -1,22 +1,17 @@
+import Data.Monoid ((<>))
 import XMonad
-import XMonad.Layout
+import XMonad.Actions.CycleWS (nextWS, prevWS, shiftToNext, shiftToPrev)
+import XMonad.Actions.UpdatePointer
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
-import XMonad.Util.EZConfig
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Actions.UpdatePointer
-import XMonad.Actions.GridSelect
+import XMonad.Layout
+import XMonad.Layout.Tabbed
+import XMonad.Layout.NoBorders
+import XMonad.Util.EZConfig
+import XMonad.Util.Hacks
+-- import XMonad.Actions.GridSelect
 -- import XMonad.Layout.IfMax
-
-import Data.Monoid ((<>))
--- import XMonad.Layout.BinarySpacePartition
-
-wallPaperPath = "$HOME/Pictures/Wallpapers/1b1f1a96d4a27816f64bfa2aace59626.jpeg"
-
-main :: IO()
-main = do
-  xmonad =<< xmobar (ewmh myConfig)
-
 
 myTerminal = "wezterm"
 myBorderWidth = 2
@@ -25,42 +20,47 @@ myStartupHook = do
   -- ibus-daemonの起動
   spawn "exec ibus-daemon -drx"
   -- 背景の設定
-  -- TODO: 背景画像の設定だけ別のファイルからロードするようにする
-  spawn $ "feh --bg-scale " <> wallPaperPath
+  -- spawn $ "imv-x11 -s crop " <> wallPaperPath
   -- 背景の透過
-  spawn "xcompmgr"
+  -- spawn "xcompmgr"
 
 -- IfMaxでウィンドウ数に応じて利用するレイアウトを制御できる
 -- myLayout = tiled ||| Full ||| IfMax 3 Full tiled
-myLayout = tiled ||| Full
+myLayout = tiled ||| noBorders Full
   where
     tiled = Tall nmaster delta ratio
     nmaster = 1
-    ratio = 4/7
+    ratio = 3/7
     delta = 3/100
 
-myLogHook = updatePointer (0.05, 0.05) (0.05, 0.05)
+myLogHook = updatePointer (0.1, 0.1) (0.05, 0.25)
 
 myManageHookFloat = composeAll
   [
     className =? "Minecraft" --> doFloat
   ]
 
-myConfig = def {
-            manageHook = manageHook def <+> myManageHookFloat 
-        ,   startupHook = myStartupHook
-        ,   logHook = myLogHook
-        ,   terminal = myTerminal
-        ,   focusedBorderColor = cBlue
-        ,   normalBorderColor = cBlack
-        ,   borderWidth = myBorderWidth
-        ,   modMask = myModKey
-        ,   layoutHook = myLayout
+myConfig = def
+        { handleEventHook = fixSteamFlicker
+        , manageHook = manageHook def <+> myManageHookFloat
+        , startupHook = myStartupHook
+        , logHook = myLogHook
+        , terminal = myTerminal
+        , focusedBorderColor = cDarkGrey
+        , normalBorderColor = cBlack
+        , borderWidth = myBorderWidth
+        , modMask = myModKey
+        , layoutHook = myLayout
         } 
         `additionalKeys`
         [ 
-            ((myModKey, xK_F1), spawn "qutebrowser")
-        ,   ((myModKey, xK_f), goToSelected def)
+            ((myModKey, xK_F1), spawn "nautilus")
+        ,   ((myModKey, xK_F2), spawn "firefox")
+        ,   ((myModKey, xK_s), spawn "screenShot")
+        ,   ((myModKey, xK_bracketright), nextWS)
+        ,   ((myModKey, xK_bracketleft), prevWS)
+        ,   ((myModKey .|. shiftMask , xK_bracketright), shiftToNext)
+        ,   ((myModKey .|. shiftMask , xK_bracketleft), shiftToPrev)
         ]
 
 bgColor   = "#363434"
@@ -73,3 +73,7 @@ cOrange   = "#f58a42"
 cGrey     = "#c2c2c2"
 cDarkGrey = "#787576"
 cBlack    = "#000000"
+
+main :: IO()
+main = do
+  xmonad =<< xmobar (ewmh myConfig)
