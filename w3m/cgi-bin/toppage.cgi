@@ -1,22 +1,17 @@
-#!/usr/bin/python3
-import os
+#!/usr/bin/sed 1,2d
 
-def main():
-  print("Content-type: text/plain")
-  print(command(commands))
-  print("")
+Content-type:text/html
 
-commands = [
-  f'GOTO "file:///home/{os.environ["USER"]}/.w3m/src/toppage.html"',
-  "DELETE_PREVBUF",
-  "NEXT_LINK"
-]
-
-def command(coms):
-  str = 'W3m-control: COMMAND '
-  for com in coms:
-    str += (com + "; ")
-  return str
-  
-if __name__ == "__main__":
-    main()
+<!DOCTYPE html>
+<html>
+<head><title>atled home</title></head>
+<body>
+  <p align="center">
+    <form action="https://www.google.com/search" method=get>
+      word: <input type=text name=q size=50>
+      <input type=submit value="送信">
+      <input type=reset value="削除"><br>
+    </form>
+  </p>
+</body>
+</html>
