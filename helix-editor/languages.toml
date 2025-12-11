@@ -42,3 +42,9 @@ name = "hy"
 [grammar.source]
 git = "https://github.com/kwshi/tree-sitter-hy"
 rev = "7e5ec916f97bd4a4aa99498ed3c70bdbcb02a071"
+
+[[language]]
+name = "html"
+[language.formatter]
+command = "superhtml"
+args = ["fmt", "--stdin"]
