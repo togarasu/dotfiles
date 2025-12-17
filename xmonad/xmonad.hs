@@ -66,7 +66,7 @@ myConfig = def
         ,   ((myModKey, xK_p), spawn "rofi -show drun")
         ,   ((myModKey, xK_bracketright), moveTo Next (Not emptyWS))
         ,   ((myModKey, xK_bracketleft), moveTo Prev (Not emptyWS))
-        ,   ((myModKey, xK_n), moveTo Next emptyWS)
+        ,   ((myModKey, xK_n), moveTo Next emptyWS >> spawn myTerminal)
         ,   ((myModKey .|. shiftMask, xK_n), shiftTo Next emptyWS)
         ,   ((myModKey .|. shiftMask , xK_bracketright), shiftToNext)
         ,   ((myModKey .|. shiftMask , xK_bracketleft), shiftToPrev)
