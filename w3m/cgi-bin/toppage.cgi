@@ -7,7 +7,7 @@ Content-type:text/html
 <head><title>atled home</title></head>
 <body>
   <p align="center">
-    <form action="https://www.google.com/search" method=get>
+    <form action="http://duckduckgo.com/lite" method=get>
       word: <input type=text name=q size=50>
       <input type=submit value="送信">
       <input type=reset value="削除"><br>
